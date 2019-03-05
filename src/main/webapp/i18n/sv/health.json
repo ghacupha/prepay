@@ -1,0 +1,34 @@
+{
+    "health": {
+        "title": "Statuskontroller",
+        "refresh.button": "Uppdatera",
+        "stacktrace": "Stacktrace",
+        "details": {
+            "details": "Detaljer",
+            "properties": "Egenskaper",
+            "name": "Namn",
+            "value": "Värde",
+            "error": "Fel"
+        },
+        "indicator": {
+            "binders": "Message broker",
+            "discoveryComposite": "Discovery Composite",
+            "refreshScope": "Microservice Refresh Scope",
+            "configServer": "Microservice Config Server",
+            "hystrix": "Hystrix",
+            "diskSpace": "Diskutrymme",
+            "mail": "E-post",
+            "elasticsearch": "Elasticsearch",
+            "db": "Databas"
+        },
+        "table": {
+            "service": "Service namn",
+            "status": "Status"
+        },
+        "status": {
+            "UNKNOWN": "UNKNOWN",
+            "UP": "UPP",
+            "DOWN": "NED"
+        }
+    }
+}
