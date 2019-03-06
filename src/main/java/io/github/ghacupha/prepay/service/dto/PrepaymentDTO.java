@@ -13,7 +13,6 @@ public class PrepaymentDTO implements Serializable {
     private Long id;
 
     @NotNull
-    @Size(min = 13)
     private String prepaymentAccount;
 
     @NotNull

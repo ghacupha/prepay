@@ -10,7 +10,7 @@ import java.util.Optional;
 /**
  * Service Interface for managing Prepayment.
  */
-public interface PrepaymentService {
+public interface IPrepaymentService {
 
     /**
      * Save a prepayment.
@@ -48,7 +48,7 @@ public interface PrepaymentService {
      * Search for the prepayment corresponding to the query.
      *
      * @param query the query of the search
-     * 
+     *
      * @param pageable the pagination information
      * @return the list of entities
      */

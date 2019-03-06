@@ -1,6 +1,6 @@
 package io.github.ghacupha.prepay.service.impl;
 
-import io.github.ghacupha.prepay.service.PrepaymentService;
+import io.github.ghacupha.prepay.service.IPrepaymentService;
 import io.github.ghacupha.prepay.domain.Prepayment;
 import io.github.ghacupha.prepay.repository.PrepaymentRepository;
 import io.github.ghacupha.prepay.repository.search.PrepaymentSearchRepository;
@@ -21,11 +21,11 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 /**
  * Service Implementation for managing Prepayment.
  */
-@Service
+@Service("prepaymentService")
 @Transactional
-public class PrepaymentServiceImpl implements PrepaymentService {
+public class PrepaymentService implements IPrepaymentService {
 
-    private final Logger log = LoggerFactory.getLogger(PrepaymentServiceImpl.class);
+    private final Logger log = LoggerFactory.getLogger(PrepaymentService.class);
 
     private final PrepaymentRepository prepaymentRepository;
 
@@ -33,7 +33,7 @@ public class PrepaymentServiceImpl implements PrepaymentService {
 
     private final PrepaymentSearchRepository prepaymentSearchRepository;
 
-    public PrepaymentServiceImpl(PrepaymentRepository prepaymentRepository, PrepaymentMapper prepaymentMapper, PrepaymentSearchRepository prepaymentSearchRepository) {
+    public PrepaymentService(PrepaymentRepository prepaymentRepository, PrepaymentMapper prepaymentMapper, PrepaymentSearchRepository prepaymentSearchRepository) {
         this.prepaymentRepository = prepaymentRepository;
         this.prepaymentMapper = prepaymentMapper;
         this.prepaymentSearchRepository = prepaymentSearchRepository;
