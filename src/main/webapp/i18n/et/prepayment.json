@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayments",
+                "createLabel": "Lisa uus Prepayment",
+                "createOrEditLabel": "Lisa või muuda Prepayment",
+                "search": "Otsi Prepayment"
+            },
+            "created": "Uus Prepayment on loodud identifikaatoriga {{ param }}",
+            "updated": "Prepayment identifikaatoriga {{ param }} on muudetud",
+            "deleted": "Prepayment identifikaatoriga {{ param }} on kustutatud",
+            "delete": {
+                "question": "Kas olete kindel, et soovite kustutada Prepayment {{ id }}?"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

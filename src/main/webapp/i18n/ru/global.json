@@ -1,13 +1,13 @@
 {
     "global": {
         "title": "Prepay",
-        "browsehappy":
-            "Ваш браузер <strong>устарел</strong>. Пожалуйста <a href=\"http://browsehappy.com/?locale=ru\">обновите ваш браузер</a>.",
+        "browsehappy": "Ваш браузер <strong>устарел</strong>. Пожалуйста <a href=\"http://browsehappy.com/?locale=ru\">обновите ваш браузер</a>.",
         "menu": {
             "home": "Главная",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Сущности",
+                "prepayment": "Prepayment",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -51,8 +51,7 @@
                 "authenticated": {
                     "prefix": "Если вы хотите ",
                     "link": "авторизироваться",
-                    "suffix":
-                        ", вы можете попробовать аккаунты по умолчанию:<br/>- Администратор (логин=\"admin\" и пароль=\"admin\") <br/>- Пользователь (логин=\"user\" и пароль=\"user\")."
+                    "suffix": ", вы можете попробовать аккаунты по умолчанию:<br/>- Администратор (логин=\"admin\" и пароль=\"admin\") <br/>- Пользователь (логин=\"user\" и пароль=\"user\")."
                 },
                 "register": {
                     "noaccount": "У вас нет аккаунта?",

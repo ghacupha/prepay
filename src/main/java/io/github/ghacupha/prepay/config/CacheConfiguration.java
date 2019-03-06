@@ -41,6 +41,7 @@ public class CacheConfiguration {
             cm.createCache(io.github.ghacupha.prepay.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.ghacupha.prepay.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.ghacupha.prepay.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.ghacupha.prepay.domain.Prepayment.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prepayment">
+            <h2><span jhiTranslate="prepayApp.prepayment.detail.title">Prepayment</span> {{prepayment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="prepayApp.prepayment.prepaymentAccount">Prepayment Account</span></dt>
+                <dd>
+                    <span>{{prepayment.prepaymentAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.prepaymentAccountNumber">Prepayment Account Number</span></dt>
+                <dd>
+                    <span>{{prepayment.prepaymentAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.narration">Narration</span></dt>
+                <dd>
+                    <span>{{prepayment.narration}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.remarks">Remarks</span></dt>
+                <dd>
+                    <span>{{prepayment.remarks}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.serviceOutletCode">Service Outlet Code</span></dt>
+                <dd>
+                    <span>{{prepayment.serviceOutletCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.expenseAccount">Expense Account</span></dt>
+                <dd>
+                    <span>{{prepayment.expenseAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.expenseAccountNumber">Expense Account Number</span></dt>
+                <dd>
+                    <span>{{prepayment.expenseAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.transactionId">Transaction Id</span></dt>
+                <dd>
+                    <span>{{prepayment.transactionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.transactionDate">Transaction Date</span></dt>
+                <dd>
+                    <span>{{prepayment.transactionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.amount">Amount</span></dt>
+                <dd>
+                    <span>{{prepayment.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="prepayApp.prepayment.prepaymentTerm">Prepayment Term</span></dt>
+                <dd>
+                    <span>{{prepayment.prepaymentTerm}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prepayment', prepayment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

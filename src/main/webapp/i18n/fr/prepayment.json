@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayments",
+                "createLabel": "Créer un nouveau Prepayment",
+                "createOrEditLabel": "Créer ou éditer un Prepayment",
+                "search": "Recherche pour Prepayment"
+            },
+            "created": "Un nouveau Prepayment a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Prepayment avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Prepayment avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Prepayment {{ id }} ?"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

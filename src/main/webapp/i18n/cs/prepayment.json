@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayments",
+                "createLabel": "Vytvořit Prepayment",
+                "createOrEditLabel": "Vytvořit nebo upravit Prepayment",
+                "search": "Vyhledat Prepayment"
+            },
+            "created": "Byl vytvořen potomek entity Prepayment s identifikátorem {{ param }}",
+            "updated": "Potomek entity Prepayment s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Prepayment s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Prepayment {{ id }}?"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

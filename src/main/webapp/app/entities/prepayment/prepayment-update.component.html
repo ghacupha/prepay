@@ -1,0 +1,176 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-prepayment-heading" jhiTranslate="prepayApp.prepayment.home.createOrEditLabel">Create or edit a Prepayment</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!prepayment.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="prepayment.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.prepaymentAccount" for="field_prepaymentAccount">Prepayment Account</label>
+                    <input type="text" class="form-control" name="prepaymentAccount" id="field_prepaymentAccount"
+                        [(ngModel)]="prepayment.prepaymentAccount" required minlength="13"/>
+                    <div [hidden]="!(editForm.controls.prepaymentAccount?.dirty && editForm.controls.prepaymentAccount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prepaymentAccount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prepaymentAccount?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 13 }">
+                        This field is required to be at least 13 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.prepaymentAccountNumber" for="field_prepaymentAccountNumber">Prepayment Account Number</label>
+                    <input type="text" class="form-control" name="prepaymentAccountNumber" id="field_prepaymentAccountNumber"
+                        [(ngModel)]="prepayment.prepaymentAccountNumber" required minlength="13"/>
+                    <div [hidden]="!(editForm.controls.prepaymentAccountNumber?.dirty && editForm.controls.prepaymentAccountNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prepaymentAccountNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prepaymentAccountNumber?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 13 }">
+                        This field is required to be at least 13 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.narration" for="field_narration">Narration</label>
+                    <input type="text" class="form-control" name="narration" id="field_narration"
+                        [(ngModel)]="prepayment.narration" required/>
+                    <div [hidden]="!(editForm.controls.narration?.dirty && editForm.controls.narration?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.narration?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.remarks" for="field_remarks">Remarks</label>
+                    <input type="text" class="form-control" name="remarks" id="field_remarks"
+                        [(ngModel)]="prepayment.remarks" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.serviceOutletCode" for="field_serviceOutletCode">Service Outlet Code</label>
+                    <input type="text" class="form-control" name="serviceOutletCode" id="field_serviceOutletCode"
+                        [(ngModel)]="prepayment.serviceOutletCode" required minlength="3" maxlength="3"/>
+                    <div [hidden]="!(editForm.controls.serviceOutletCode?.dirty && editForm.controls.serviceOutletCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.serviceOutletCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.serviceOutletCode?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.serviceOutletCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 3 }">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.expenseAccount" for="field_expenseAccount">Expense Account</label>
+                    <input type="text" class="form-control" name="expenseAccount" id="field_expenseAccount"
+                        [(ngModel)]="prepayment.expenseAccount" required/>
+                    <div [hidden]="!(editForm.controls.expenseAccount?.dirty && editForm.controls.expenseAccount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.expenseAccount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.expenseAccountNumber" for="field_expenseAccountNumber">Expense Account Number</label>
+                    <input type="text" class="form-control" name="expenseAccountNumber" id="field_expenseAccountNumber"
+                        [(ngModel)]="prepayment.expenseAccountNumber" required minlength="13" maxlength="13"/>
+                    <div [hidden]="!(editForm.controls.expenseAccountNumber?.dirty && editForm.controls.expenseAccountNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.expenseAccountNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.expenseAccountNumber?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 13 }">
+                        This field is required to be at least 13 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.expenseAccountNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 13 }">
+                        This field cannot be longer than 13 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.transactionId" for="field_transactionId">Transaction Id</label>
+                    <input type="text" class="form-control" name="transactionId" id="field_transactionId"
+                        [(ngModel)]="prepayment.transactionId" required/>
+                    <div [hidden]="!(editForm.controls.transactionId?.dirty && editForm.controls.transactionId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.transactionId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.transactionDate" for="field_transactionDate">Transaction Date</label>
+                    <div class="input-group">
+                        <input id="field_transactionDate" type="text" class="form-control" name="transactionDate" ngbDatepicker  #transactionDateDp="ngbDatepicker" [(ngModel)]="prepayment.transactionDate"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="transactionDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.transactionDate?.dirty && editForm.controls.transactionDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.transactionDate?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="prepayment.amount" required/>
+                    <div [hidden]="!(editForm.controls.amount?.dirty && editForm.controls.amount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.amount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.amount?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prepayApp.prepayment.prepaymentTerm" for="field_prepaymentTerm">Prepayment Term</label>
+                    <input type="number" class="form-control" name="prepaymentTerm" id="field_prepaymentTerm"
+                        [(ngModel)]="prepayment.prepaymentTerm" required/>
+                    <div [hidden]="!(editForm.controls.prepaymentTerm?.dirty && editForm.controls.prepaymentTerm?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prepaymentTerm?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.prepaymentTerm?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

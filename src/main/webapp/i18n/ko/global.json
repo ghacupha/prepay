@@ -1,13 +1,13 @@
 {
     "global": {
         "title": "Prepay",
-        "browsehappy":
-            "당신은 <strong>오래된</strong> 브라우저를 사용하고 있군요. <a href=\"http://browsehappy.com/?locale=en\">브라우저를 업그레이드</a> 해 당신의 경험을 발전시키세요.",
+        "browsehappy": "당신은 <strong>오래된</strong> 브라우저를 사용하고 있군요. <a href=\"http://browsehappy.com/?locale=en\">브라우저를 업그레이드</a> 해 당신의 경험을 발전시키세요.",
         "menu": {
             "home": "홈",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "prepayment": "Prepayment",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -51,8 +51,7 @@
                 "authenticated": {
                     "prefix": "",
                     "link": "인증",
-                    "suffix":
-                        "을 원하시면, 기본 계정을 사용할 수 있습니다:<br/>- 관리자 (아이디=\"admin\", 비밀번호=\"admin\") <br/>- 사용자 (아이디=\"user\", 비밀번호=\"user\")."
+                    "suffix": "을 원하시면, 기본 계정을 사용할 수 있습니다:<br/>- 관리자 (아이디=\"admin\", 비밀번호=\"admin\") <br/>- 사용자 (아이디=\"user\", 비밀번호=\"user\")."
                 },
                 "register": {
                     "noaccount": "아직 계정이 없습니까?",

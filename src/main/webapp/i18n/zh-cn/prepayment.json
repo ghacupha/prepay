@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayments",
+                "createLabel": "创建新 Prepayment",
+                "createOrEditLabel": "创建或编辑 Prepayment",
+                "search": "查找 Prepayment"
+            },
+            "created": "Prepayment {{ param }} 创建成功",
+            "updated": "Prepayment {{ param }} 更新成功",
+            "deleted": "Prepayment {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Prepayment {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

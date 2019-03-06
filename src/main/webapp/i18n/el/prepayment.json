@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayments",
+                "createLabel": "Δημιουργήστε ένα νέο Prepayment",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Prepayment",
+                "search": "Αναζήτηση για Prepayment"
+            },
+            "created": "Ένα νέο Prepayment έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Prepayment έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Prepayment έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Prepayment {{ id }};"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

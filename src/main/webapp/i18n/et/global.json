@@ -1,13 +1,13 @@
 {
     "global": {
         "title": "Prepay",
-        "browsehappy":
-            "Te kasutate <strong>vananenud</strong> veebilehitsejat. Kasutuskogemuse parandamiseks palun <a href=\"http://browsehappy.com/?locale=et\">uuendage oma veebilehitsejat</a>.",
+        "browsehappy": "Te kasutate <strong>vananenud</strong> veebilehitsejat. Kasutuskogemuse parandamiseks palun <a href=\"http://browsehappy.com/?locale=et\">uuendage oma veebilehitsejat</a>.",
         "menu": {
             "home": "Avaleht",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Olemid",
+                "prepayment": "Prepayment",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -51,8 +51,7 @@
                 "authenticated": {
                     "prefix": "Kui te soovite ",
                     "link": "sisse logida",
-                    "suffix":
-                        ", siis võite kasutada vaikekontosid:<br/>- Administraator (kasutajanimi=\"admin\" ja salasõna=\"admin\") <br/>- Kasutaja (kasutajanimi=\"user\" ja salasõna=\"user\")."
+                    "suffix": ", siis võite kasutada vaikekontosid:<br/>- Administraator (kasutajanimi=\"admin\" ja salasõna=\"admin\") <br/>- Kasutaja (kasutajanimi=\"user\" ja salasõna=\"user\")."
                 },
                 "register": {
                     "noaccount": "Teil pole veel kontot?",

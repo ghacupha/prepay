@@ -1,0 +1,32 @@
+{
+    "prepayApp": {
+        "prepayment": {
+            "home": {
+                "title": "Prepayment",
+                "createLabel": "Dodaj Prepayment",
+                "createOrEditLabel": "Dodaj lub edytuj: Prepayment",
+                "search": "Szukaj Prepayment"
+            },
+            "created": "Utworzono nowy obiekt typu Prepayment z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Prepayment z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Prepayment z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Prepayment {{ id }}?"
+            },
+            "detail": {
+                "title": "Prepayment"
+            },
+            "prepaymentAccount": "Prepayment Account",
+            "prepaymentAccountNumber": "Prepayment Account Number",
+            "narration": "Narration",
+            "remarks": "Remarks",
+            "serviceOutletCode": "Service Outlet Code",
+            "expenseAccount": "Expense Account",
+            "expenseAccountNumber": "Expense Account Number",
+            "transactionId": "Transaction Id",
+            "transactionDate": "Transaction Date",
+            "amount": "Amount",
+            "prepaymentTerm": "Prepayment Term"
+        }
+    }
+}

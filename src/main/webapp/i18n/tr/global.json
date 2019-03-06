@@ -1,13 +1,13 @@
 {
     "global": {
         "title": "Prepay",
-        "browsehappy":
-            "<strong>Çok eski</strong> bir tarayıcı kullanıyorsunuz. Lütfen kullanım kalitenizi arttırmak için <a href=\"http://browsehappy.com/?locale=tr\">tarayıcınızı yükseltin</a>.",
+        "browsehappy": "<strong>Çok eski</strong> bir tarayıcı kullanıyorsunuz. Lütfen kullanım kalitenizi arttırmak için <a href=\"http://browsehappy.com/?locale=tr\">tarayıcınızı yükseltin</a>.",
         "menu": {
             "home": "Ana Sayfa",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Varlıklar",
+                "prepayment": "Prepayment",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -51,8 +51,7 @@
                 "authenticated": {
                     "prefix": "",
                     "link": "Giriş",
-                    "suffix":
-                        " yapmak istiyorsanız, varsayılan hesaplardan birini deneyebilirsiniz:<br/>- Yönetici (kullanıcı adı=\"admin\" ve şifre=\"admin\") <br/>- Kullanıcı (kullanıcı adı=\"user\" and şifre=\"user\")."
+                    "suffix": " yapmak istiyorsanız, varsayılan hesaplardan birini deneyebilirsiniz:<br/>- Yönetici (kullanıcı adı=\"admin\" ve şifre=\"admin\") <br/>- Kullanıcı (kullanıcı adı=\"user\" and şifre=\"user\")."
                 },
                 "register": {
                     "noaccount": "Henüz bir hesabınız yok mu?",
