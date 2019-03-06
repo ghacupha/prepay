@@ -1,5 +1,5 @@
 package io.github.ghacupha.prepay.web.rest;
-import io.github.ghacupha.prepay.service.IPrepaymentService;
+import io.github.ghacupha.prepay.service.PrepaymentService;
 import io.github.ghacupha.prepay.web.rest.errors.BadRequestAlertException;
 import io.github.ghacupha.prepay.web.rest.util.HeaderUtil;
 import io.github.ghacupha.prepay.web.rest.util.PaginationUtil;
@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,9 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.StreamSupport;
+
+import static org.elasticsearch.index.query.QueryBuilders.*;
 
 /**
  * REST controller for managing Prepayment.
@@ -33,12 +37,12 @@ public class PrepaymentResource {
 
     private static final String ENTITY_NAME = "prepayment";
 
-    private final IPrepaymentService IPrepaymentService;
+    private final PrepaymentService prepaymentService;
 
     private final PrepaymentQueryService prepaymentQueryService;
 
-    public PrepaymentResource(IPrepaymentService IPrepaymentService, PrepaymentQueryService prepaymentQueryService) {
-        this.IPrepaymentService = IPrepaymentService;
+    public PrepaymentResource(PrepaymentService prepaymentService, PrepaymentQueryService prepaymentQueryService) {
+        this.prepaymentService = prepaymentService;
         this.prepaymentQueryService = prepaymentQueryService;
     }
 
@@ -55,7 +59,7 @@ public class PrepaymentResource {
         if (prepaymentDTO.getId() != null) {
             throw new BadRequestAlertException("A new prepayment cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        PrepaymentDTO result = IPrepaymentService.save(prepaymentDTO);
+        PrepaymentDTO result = prepaymentService.save(prepaymentDTO);
         return ResponseEntity.created(new URI("/api/prepayments/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -76,7 +80,7 @@ public class PrepaymentResource {
         if (prepaymentDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        PrepaymentDTO result = IPrepaymentService.save(prepaymentDTO);
+        PrepaymentDTO result = prepaymentService.save(prepaymentDTO);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, prepaymentDTO.getId().toString()))
             .body(result);
@@ -118,7 +122,7 @@ public class PrepaymentResource {
     @GetMapping("/prepayments/{id}")
     public ResponseEntity<PrepaymentDTO> getPrepayment(@PathVariable Long id) {
         log.debug("REST request to get Prepayment : {}", id);
-        Optional<PrepaymentDTO> prepaymentDTO = IPrepaymentService.findOne(id);
+        Optional<PrepaymentDTO> prepaymentDTO = prepaymentService.findOne(id);
         return ResponseUtil.wrapOrNotFound(prepaymentDTO);
     }
 
@@ -131,7 +135,7 @@ public class PrepaymentResource {
     @DeleteMapping("/prepayments/{id}")
     public ResponseEntity<Void> deletePrepayment(@PathVariable Long id) {
         log.debug("REST request to delete Prepayment : {}", id);
-        IPrepaymentService.delete(id);
+        prepaymentService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
@@ -146,7 +150,7 @@ public class PrepaymentResource {
     @GetMapping("/_search/prepayments")
     public ResponseEntity<List<PrepaymentDTO>> searchPrepayments(@RequestParam String query, Pageable pageable) {
         log.debug("REST request to search for a page of Prepayments for query {}", query);
-        Page<PrepaymentDTO> page = IPrepaymentService.search(query, pageable);
+        Page<PrepaymentDTO> page = prepaymentService.search(query, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/prepayments");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

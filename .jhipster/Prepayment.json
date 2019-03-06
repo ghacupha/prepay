@@ -10,7 +10,9 @@
                 "required",
                 "minlength"
             ],
-            "fieldValidateRulesMinlength": "13"
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "prepaymentAccountNumber",
@@ -19,7 +21,8 @@
                 "required",
                 "minlength"
             ],
-            "fieldValidateRulesMinlength": "13"
+            "fieldValidateRulesMinlength": "13",
+            "fieldValidateRulesMaxlength": "13"
         },
         {
             "fieldName": "narration",

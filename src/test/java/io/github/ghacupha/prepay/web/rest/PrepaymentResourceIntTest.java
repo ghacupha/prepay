@@ -5,10 +5,11 @@ import io.github.ghacupha.prepay.PrepayApp;
 import io.github.ghacupha.prepay.domain.Prepayment;
 import io.github.ghacupha.prepay.repository.PrepaymentRepository;
 import io.github.ghacupha.prepay.repository.search.PrepaymentSearchRepository;
-import io.github.ghacupha.prepay.service.IPrepaymentService;
+import io.github.ghacupha.prepay.service.PrepaymentService;
 import io.github.ghacupha.prepay.service.dto.PrepaymentDTO;
 import io.github.ghacupha.prepay.service.mapper.PrepaymentMapper;
 import io.github.ghacupha.prepay.web.rest.errors.ExceptionTranslator;
+import io.github.ghacupha.prepay.service.dto.PrepaymentCriteria;
 import io.github.ghacupha.prepay.service.PrepaymentQueryService;
 
 import org.junit.Before;
@@ -53,8 +54,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = PrepayApp.class)
 public class PrepaymentResourceIntTest {
 
-    private static final String DEFAULT_PREPAYMENT_ACCOUNT = "AAAAAAAAAAAAA";
-    private static final String UPDATED_PREPAYMENT_ACCOUNT = "BBBBBBBBBBBBB";
+    private static final String DEFAULT_PREPAYMENT_ACCOUNT = "AAAAAAAAAA";
+    private static final String UPDATED_PREPAYMENT_ACCOUNT = "BBBBBBBBBB";
 
     private static final String DEFAULT_PREPAYMENT_ACCOUNT_NUMBER = "AAAAAAAAAAAAA";
     private static final String UPDATED_PREPAYMENT_ACCOUNT_NUMBER = "BBBBBBBBBBBBB";
@@ -93,7 +94,7 @@ public class PrepaymentResourceIntTest {
     private PrepaymentMapper prepaymentMapper;
 
     @Autowired
-    private IPrepaymentService IPrepaymentService;
+    private PrepaymentService prepaymentService;
 
     /**
      * This repository is mocked in the io.github.ghacupha.prepay.repository.search test package.
@@ -128,7 +129,7 @@ public class PrepaymentResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final PrepaymentResource prepaymentResource = new PrepaymentResource(IPrepaymentService, prepaymentQueryService);
+        final PrepaymentResource prepaymentResource = new PrepaymentResource(prepaymentService, prepaymentQueryService);
         this.restPrepaymentMockMvc = MockMvcBuilders.standaloneSetup(prepaymentResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
@@ -432,7 +433,7 @@ public class PrepaymentResourceIntTest {
             .andExpect(jsonPath("$.[*].amount").value(hasItem(DEFAULT_AMOUNT.intValue())))
             .andExpect(jsonPath("$.[*].prepaymentTerm").value(hasItem(DEFAULT_PREPAYMENT_TERM)));
     }
-
+    
     @Test
     @Transactional
     public void getPrepayment() throws Exception {

@@ -29,7 +29,6 @@ public class Prepayment implements Serializable {
     private Long id;
 
     @NotNull
-    @Size(min = 13)
     @Column(name = "prepayment_account", nullable = false)
     private String prepaymentAccount;
 
